@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- Main Game Box -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Trivia Game Title-->
+                <div id="header" class="row">
+                    <div id="gameTitle" class="col-md-12">
+                        <h1>Trivia Game of Thrones!</h1>
+
+                        <hr>
+
+                        <!-- Countdown Timer -->
+                        <div id="gameBlock" class="row">
+                            <div id="countdown" class="col-md-12">
+                                <p>Time Remaining: <span id="timeLeft">--</span></p>
+
+                                <!-- Trivia Question/Answer Area -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="triviaQ">Press any key to get started...</p>
+                                        <p id="triviaA"></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Score Information -->
+        <div id="scoreCard" class="row">
+            <div class = "col-md-4">
+                <p>Question: <span id="questionsLeft">--</span> of 10</p>
+            </div>
+
+            <div class = col-md-4>
+                <p>Score: <span id="currentScore"></span></p>
+            </div>
+
+            <div class= "col-md-4">
+                <p>Grade: <span id="playerGrade"></span></p>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
