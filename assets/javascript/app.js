@@ -147,9 +147,10 @@ var gameQuestions = [
 
 function gameStart() {
 
-    $(document).unbind("keyup", gameStart);
+    $("#start").unbind("click", gameStart);
+    $("#start").hide();
     $("#triviaA").empty();
-
+    $("#playerGrade").empty();
 
     // Timer set
     count = 11;
@@ -241,7 +242,7 @@ function incorrectAnswer() {
 function gameOver() {
     timerStop();
     $("#timeLeft").html("--");
-    $("#triviaQ").html("<p>Press any key to play again...</p>");
+    $("#triviaQ").empty();
     $("#triviaA").empty();
     $("#questionsLeft").html("--");
 
@@ -257,18 +258,18 @@ function gameOver() {
 function gradePlayer(scoreVal) {
     var totalScore = parseFloat(scoreVal);
     var gradeLetter;
-    grade = totalScore / 10;
+    grade = totalScore / 10.0;
 
-    if (totalScore > 0.89) {
+    if (grade > 0.89) {
         gradeLetter = "A";
     }
-    else if (totalScore > 0.79) {
+    else if (grade > 0.79) {
         gradeLetter = "B";
     }
-    else if (totalScore > 0.69) {
+    else if (grade > 0.69) {
         gradeLetter = "C";
     }
-    else if (totalScore > 0.59) {
+    else if (grade > 0.59) {
         gradeLetter = "D";
     }
     else {
@@ -285,7 +286,9 @@ function gameReset() {
     score = 0;
     grade = "";
 
-    $(document).bind("keyup", gameStart);
+    $("#start").html("Click to Retry");
+    $("#start").show();
+    $("#start").bind("click", gameStart);
 }
 
 // ***************************************
@@ -294,6 +297,6 @@ function gameReset() {
 // Main
 $(document).ready(function() {
 
-    $(document).bind("keyup", gameStart);
+    $("#start").bind("click", gameStart);
 
 });
