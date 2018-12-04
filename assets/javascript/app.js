@@ -146,6 +146,11 @@ var gameQuestions = [
 // Functions
 
 function gameStart() {
+
+    $(document).unbind("keyup", gameStart);
+    $("#triviaA").empty();
+
+
     // Timer set
     count = 11;
     intervalID = setInterval(countDown, 1000);
@@ -209,7 +214,6 @@ function displayQA(i) {
 
             setTimeout(gameStart, 1000 * 4);
         }
-
         else {
             incorrectAnswer();
             timerStop();
@@ -222,7 +226,7 @@ function displayQA(i) {
 // Alert player that the correct answer was selected -- move on to next question
 function correctAnswer(i) {
     var imageShow = $("<img>").attr({src: correctIMG[i], height: "260px"});
-    $("#triviaA").empty();
+    $("#triviaA").html("<h3 id='right'>CORRECT!</h3>");
     $("#triviaQ").html(imageShow);
 }
 
@@ -230,14 +234,14 @@ function correctAnswer(i) {
 function incorrectAnswer() {
     var x = Math.floor(Math.random() * 8);
     var imageShow = $("<img>").attr({src: incorrectIMG[x], height: "260px"});
-    $("#triviaA").empty();
+    $("#triviaA").html("<h3 id='wrong'>INCORRECT!</h3>");
     $("#triviaQ").html(imageShow);
 }
 
 function gameOver() {
     timerStop();
-    $("#timeLeft").empty();
-    $("#triviaQ").empty();
+    $("#timeLeft").html("--");
+    $("#triviaQ").html("<p>Press any key to play again...</p>");
     $("#triviaA").empty();
     $("#questionsLeft").html("--");
 
@@ -247,13 +251,7 @@ function gameOver() {
     grade = gradePlayer(score);
     $("#playerGrade").html(grade);
 
-    // // FIXME: Game reset
-    // q = 0;
-    // rounds = 1;
-    // score = 0;
-    // grade = "";
-
-    // $(document).on("keyup", gameReset;
+    gameReset();
 }
 
 function gradePlayer(scoreVal) {
@@ -280,12 +278,22 @@ function gradePlayer(scoreVal) {
     return gradeLetter;
 }
 
+function gameReset() {
+    // FIXME: Game reset
+    q = 0;
+    rounds = 1;
+    score = 0;
+    grade = "";
+
+    $(document).bind("keyup", gameStart);
+}
+
 // ***************************************
 
 
 // Main
 $(document).ready(function() {
 
-$(document).on("keyup", gameStart);
+    $(document).bind("keyup", gameStart);
 
 });
