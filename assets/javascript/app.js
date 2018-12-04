@@ -11,7 +11,7 @@ var gameQuestions = [
 
     {
         // Q1
-        question: "After the 'Battle of the Bastards,' who reigns as King in the North?",
+        question: 'After the "Battle of the Bastards," who reigns as King in the North?',
         answers: 
         {
             a: "Ramsay Bolton",
@@ -24,7 +24,7 @@ var gameQuestions = [
 
     {
         // Q2
-        question: "How tall is 'The Wall' protecting Westeros from what lies to the north?",
+        question: 'How tall is "The Wall" protecting Westeros from what lies to the north?',
         answers:
         {
             a: "500ft",
@@ -53,10 +53,10 @@ var gameQuestions = [
         question: "What are the words of House Lannister?",
         answers:
         {
-            a: "'A Lannister always pays his debts.'",
-            b: "'Winter is coming.'",
-            c: "'Hear me roar!'",
-            d: "'We stand together.'"
+            a: '"A Lannister always pays his debts."',
+            b: '"Winter is coming."',
+            c: '"Hear me roar!"',
+            d: '"We stand together."'
         },
         correctAnswer: "c"
     },
@@ -76,13 +76,13 @@ var gameQuestions = [
 
     {
         // Q6
-        question: "'Valar morghulis.' What does this mean?",
+        question: '"Valar morghulis." What does this mean?',
         answers:
         {
-            a: "'All men must serve.'",
-            b: "'All men must live.'",
-            c: "'All men must fly.'",
-            d: "'All men must die.'"
+            a: '"All men must serve."',
+            b: '"All men must live."',
+            c: '"All men must fly."',
+            d: '"All men must die."'
         },
         correctAnswer: "d"
     },
